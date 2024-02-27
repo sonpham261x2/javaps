@@ -117,14 +117,23 @@ public class QLTL {
             }
             if(kiemTra){
                 TaiLieu[] newdstl = new TaiLieu[dstl.length-1];
-                for (int i =0 ; i<dstl.length-1;i++){
-                    if(dstl[i].getMaTaiLieu().equals(maTaiLieu)){
-                        layViTri = i;
+//                for (int i =0 ; i<dstl.length-1;i++){
+//                    if(dstl[i].getMaTaiLieu().equals(maTaiLieu)){
+//                        layViTri = i;
+//                    }
+//                    if (i>=layViTri){
+//                        newdstl[i]=dstl[i+1];
+//                    }
+//                    else newdstl[i]=dstl[i];
+//                }
+//                dstl = newdstl;
+                for ( int i=0,j=0;i<dstl.length & j<dstl.length-1;i++,j++){
+                    System.out.println(i+"-------"+j);
+                    if (dstl[i].getMaTaiLieu().equals(maTaiLieu)){
+                        j--;
+                        continue;
                     }
-                    if (i>=layViTri){
-                        newdstl[i]=dstl[i+1];
-                    }
-                    else newdstl[i]=dstl[i];
+                    newdstl[j]=dstl[i];
                 }
                 dstl = newdstl;
             }
